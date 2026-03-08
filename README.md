@@ -1,5 +1,4 @@
 ☸️ Automated Kubernetes Cluster Deployment
-
 Welcome! If you've set aside a few hours to dive into Infrastructure as Code (IaC) and Cluster Orchestration, you're in the right place. This project automates the provisioning of AWS EC2 instances using Terraform and the configuration of a Kubernetes (v1.31) cluster using Ansible.
 
 🛠 Prerequisites
@@ -72,6 +71,6 @@ If you see test-nginx in a Running state... Tada! You have a fully functional Ku
 ⚠️ Important Notes
 Cgroup Driver: This project uses systemd as the cgroup driver for containerd to match Kubernetes 1.31 defaults.
 
-Networking: Calico is used for the Pod Network (Default CIDR: 192.168.0.0/16).:
+Networking: Calico is used for the Pod Network (Default CIDR: 192.168.0.0/16).
 
 Cleanup: Don't forget to run terraform destroy when you are finished to avoid AWS costs!
