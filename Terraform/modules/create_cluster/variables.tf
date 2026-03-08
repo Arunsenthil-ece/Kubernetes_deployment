@@ -9,7 +9,7 @@ locals {
 }
 
 locals {
-  my_ip = "183.82.204.134/32"
+  my_ip = "## COPY YOUR PUBLIC IP HERE ##"
 }
 
 variable "ami_id" {
