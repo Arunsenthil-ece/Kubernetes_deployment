@@ -21,9 +21,9 @@ Your keys are typically stored in ~/.ssh/id_rsa.pub.
 
 🚀 Getting Started
 -------------------
-1. Clone the Repository
+1. Clone the Repository:
    
-It is recommended to clone this into your Linux home directory (especially if using WSL2) to avoid permission issues:
+* It is recommended to clone this into your Linux home directory (especially if using WSL2) to avoid permission issues:
 
 ```bash
 cd ~
@@ -31,7 +31,8 @@ git clone [<your-repo-link>](https://github.com/Arunsenthil-ece/Kubernetes_deplo
 cd kubernetes_deployment
 ```
 
-2. Infrastructure Provisioning (Terraform)
+2. Infrastructure Provisioning (Terraform):
+   
 * Configure AWS: Place your config and credentials files in the Terraform/ folder.
 * Setup Variables: * Open Terraform/terraform.tfvars and paste your public key in the public_key field.
      * In Terraform/modules/create_cluster/variables.tf, update local.my_ip with your public IP (found via "What is my IP" on Google). This restricts SSH access to your machine only.
@@ -45,8 +46,9 @@ terraform plan
 terraform apply -auto-approve
 ```
 
-3. Cluster Configuration (Ansible)
-Once your EC2 instances are "Green" in the AWS Console, go back to the root directory to generate your inventory:
+3. Cluster Configuration (Ansible):
+   
+* Once your EC2 instances are "Green" in the AWS Console, go back to the root directory to generate your inventory:
 
 ```bash
 cd ..
