@@ -22,11 +22,12 @@ Your keys are typically stored in ~/.ssh/id_rsa.pub.
 🚀 Getting Started
 -------------------
 1. Clone the Repository
+   
 It is recommended to clone this into your Linux home directory (especially if using WSL2) to avoid permission issues:
 
 ```bash
 cd ~
-git clone <your-repo-link>
+git clone [<your-repo-link>](https://github.com/Arunsenthil-ece/Kubernetes_deployment.git)
 cd kubernetes_deployment
 ```
 
