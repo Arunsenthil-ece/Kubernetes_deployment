@@ -63,6 +63,7 @@ ansible-playbook -i inventory.ini workernode-playbook.yml
 ```
 
 🔍 Verification
+
 Log in to your Control Plane node to verify the cluster state:
 
 ```bash
