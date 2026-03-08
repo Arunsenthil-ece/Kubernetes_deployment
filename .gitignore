@@ -2,5 +2,6 @@
 .terraform.lock.hcl
 Terraform/.terraform/
 Terraform/.terraform.lock.hcl
+Terraform/terraformtfstate*
 Terraform/config
 Terraform/credentials
