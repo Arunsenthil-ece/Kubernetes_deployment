@@ -1,0 +1,17 @@
+- name: Configure worker nodes
+  hosts: worker-nodes
+  become: true
+  gather_facts: true
+  roles:
+      - role: base
+        tags: role-base
+      - role: hostname
+        tags: role-hostname
+      - role: containerd
+        tags: role-containerd
+  tasks:
+     - name: Copy the join command to server location
+       copy: src=join-command dest=/tmp/join-command.sh mode=0777
+
+     - name: Join the node to cluster
+       command: sh /tmp/join-command.sh

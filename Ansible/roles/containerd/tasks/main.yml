@@ -1,0 +1,23 @@
+---
+
+- name: Generate containerd v2 compatible config
+  shell: |
+       containerd config default > /etc/containerd/config.toml
+
+- name: Update config to Version 3 and Enable SystemdCgroup
+  replace:
+       path: /etc/containerd/config.toml
+       regexp: 'SystemdCgroup = false'
+       replace: 'SystemdCgroup = true'
+
+- name: Ensure the CRI plugin is NOT disabled
+  lineinfile:
+       path: /etc/containerd/config.toml
+       regexp: 'disabled_plugins = \[.*"cri".*\]'
+       state: absent
+
+- name: Restart containerd to apply v2 changes
+  systemd:
+       name: containerd
+       state: restarted
+       enabled: yes

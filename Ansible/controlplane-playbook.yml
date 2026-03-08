@@ -5,3 +5,9 @@
   roles:
       - role: base
         tags: role-base 
+      - role: hostname
+        tags: role-hostname
+      - role: containerd
+        tags: role-containerd
+      - role: kubeadm
+        tags: role-kubeadm

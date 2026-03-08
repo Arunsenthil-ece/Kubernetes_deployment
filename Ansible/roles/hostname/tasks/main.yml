@@ -1,0 +1,23 @@
+---
+
+- name: Set the system hostname
+  hostname:
+    name: "{{ inventory_hostname }}"
+  become: yes
+
+- name: Ensure hostname is in /etc/hosts
+  lineinfile:
+    path: /etc/hosts
+    regexp: '^127.0.0.1'
+    line: "127.0.0.1 localhost {{ inventory_hostname }}"
+    owner: root
+    group: root
+    mode: '0644'
+  become: yes
+
+- name: Prevent cloud-init from changing hostname on reboot
+  lineinfile:
+    path: /etc/cloud/cloud.cfg
+    regexp: '^preserve_hostname:'
+    line: 'preserve_hostname: true'
+  become: yes

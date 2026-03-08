@@ -1,0 +1,27 @@
+---
+- import_role:
+     name: containerd
+
+- name: Initialize the Kubernetes cluster using kubeadm
+  command: kubeadm init --apiserver-advertise-address="{{ ansible_default_ipv4.address }}" --pod-network-cidr=192.168.0.0/16
+
+- name: Setup kubeconfig for ubuntu user
+  command: "{{ item }}"
+  with_items:
+    - mkdir -p /home/ubuntu/.kube
+    - rm -r /home/ubuntu/.kube/config
+    - cp -i /etc/kubernetes/admin.conf /home/ubuntu/.kube/config
+    - chown ubuntu:ubuntu /home/ubuntu/.kube/config
+
+- name: Install calico pod network
+  become: false
+  command: kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/calico.yaml
+
+- name: Generate join command
+  become: false
+  command: kubeadm token create --print-join-command
+  register: join_command
+
+- name: Copy join command to local file
+  become: false
+  local_action: copy content="{{ join_command.stdout_lines[0] }}" dest="./join-command"
