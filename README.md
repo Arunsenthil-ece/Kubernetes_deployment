@@ -1,4 +1,5 @@
 ☸️ Automated Kubernetes Cluster Deployment
+
 Welcome! If you've set aside a few hours to dive into Infrastructure as Code (IaC) and Cluster Orchestration, you're in the right place. This project automates the provisioning of AWS EC2 instances using Terraform and the configuration of a Kubernetes (v1.31) cluster using Ansible.
 
 🛠 Prerequisites
