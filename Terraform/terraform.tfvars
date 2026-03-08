@@ -1,0 +1,13 @@
+region = "ap-south-1"
+
+ami_id = "ami-0d60cff8925d28dad"
+
+profile = "Kube"
+
+controlplane_instance = "t4g.medium"
+
+worker_instance = "t4g.medium"
+
+public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDNOhcgxwZ6UYGJm+TmzKiIjZ0aYh+cJ92CCvgIQJw8Xy5B88/vTSnYiGCyyM7/g+KLgZ4d4jDavb4zLouq1rODvDLUZgNIQMSaY9NSSnd0hN34OpahkS2KgCB7i4NBmH0Ct5JI15ufzli7F9DwWj2iYJwtDlNxKE25WnNcUXlI2mZVK0LkTzQbbDFOHX7X9l6ga18Slens025+qSqFFzYgttKt9uTolh+XGiAdjdcp7ggMiou7vSPfkwnOzX2SIp6DnHlSxUQHMf34wetDJBQEuG+HyFZw2G+wwWbSyseI6CP9lPlI7uDrgn4owegYWQ1HviQt6QlHJKt4p5CfI7SZEDFkCwx4kHaEOVj5UsuGKhgQ7+BtPkMIQEA0ycmCIkeTLNzLQC1C/BqbRfiikHCImUSN8BV0xB3okxs/AUDfO9OOqTAdJsHVy7pKTkUHwc8YuJrWIKg8KPQrLr10tDoN/wQLHG9z3Qo6Wnu5DXTrW+rxZI7A1OwLR4bcJKXzexk0Y4ZUVfR5RA2+7YNniRtoNTqHilEww8iHFR7CU0GA8I12LJnHEF0Iah47hxg3HZBy1aWZqCaE/s9y/Yzh5lZ7nyu9yWmEuGJBhRYAhoS3hJErGhhcON+NlO74AZNCMNSjvsVVpfXuEur59F6iKdQiuaOtcfktjulUGBtGK6zw3w== arunsenthil.ece@gmail.com"
+
+worker_nodes = 2
