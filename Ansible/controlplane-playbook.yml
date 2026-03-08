@@ -1,0 +1,7 @@
+- name: Configure control-plane node
+  hosts: control-plane
+  become: true
+  gather_facts: true
+  roles:
+      - role: base
+        tags: role-base 

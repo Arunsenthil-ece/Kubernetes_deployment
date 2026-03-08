@@ -3,5 +3,6 @@
 Terraform/.terraform/
 Terraform/.terraform.lock.hcl
 Terraform/terraform.tfstate*
+Terraform/modules/*/terraform.tfstate*
 Terraform/config
 Terraform/credentials
