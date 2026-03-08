@@ -28,7 +28,7 @@ Your keys are typically stored in ~/.ssh/id_rsa.pub.
 ```bash
 cd ~
 git clone https://github.com/Arunsenthil-ece/Kubernetes_deployment.git
-cd kubernetes_deployment
+cd Kubernetes_deployment
 ```
 
 2. Infrastructure Provisioning (Terraform):
