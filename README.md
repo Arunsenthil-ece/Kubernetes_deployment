@@ -16,8 +16,8 @@ Generate a 4096-bit RSA key pair for secure access to your instances:
 
 ```bash
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-Your keys are typically stored in ~/.ssh/id_rsa.pub.
 ```
+Your keys are typically stored in ~/.ssh/id_rsa.pub.
 
 🚀 Getting Started
 -------------------
@@ -31,11 +31,9 @@ cd kubernetes_deployment
 ```
 
 2. Infrastructure Provisioning (Terraform)
-Configure AWS: Place your config and credentials files in the Terraform/ folder.
-
-Setup Variables: * Open Terraform/terraform.tfvars and paste your public key in the public_key field.
-
-In Terraform/modules/create_cluster/variables.tf, update local.my_ip with your public IP (found via "What is my IP" on Google). This restricts SSH access to your machine only.
+* Configure AWS: Place your config and credentials files in the Terraform/ folder.
+* Setup Variables: * Open Terraform/terraform.tfvars and paste your public key in the public_key field.
+     * In Terraform/modules/create_cluster/variables.tf, update local.my_ip with your public IP (found via "What is my IP" on Google). This restricts SSH access to your machine only.
 
 Deploy:
 
