@@ -31,6 +31,13 @@ resource "aws_vpc_security_group_ingress_rule" "allow_kube" {
   from_port         = 6443
 }
 
+resource "aws_vpc_security_group_ingress_rule" "allow_kube_public" {
+  security_group_id = aws_security_group.kubernetes.id
+  cidr_ipv4         = local.my_ip
+  ip_protocol       = "tcp"
+  to_port           = 6443
+  from_port         = 6443
+}
 
 resource "aws_vpc_security_group_egress_rule" "allow_outbound" {
   security_group_id = aws_security_group.kubernetes.id
